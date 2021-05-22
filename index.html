@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#0a0a3e" />
+        <meta name="theme-color" content="#2d2d2d" />
         <title>Fish</title>
 
         <link rel="stylesheet" href="style.css" />
@@ -159,11 +159,24 @@
         </div>
 
         <script>
-            let dom = document.documentElement;
-            dom.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
-
+            let dom = document.body;
+            if (dom.clientHeight !== window.innerHeight) {
+                document.getElementsByTagName('meta')['theme-color'].content =
+                    '#2d2d2d';
+            } else {
+                document.getElementsByTagName('meta')['theme-color'].content =
+                    '#0a0a3e';
+            }
             window.onscroll = function () {
-                dom.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+                if (dom.clientHeight !== window.innerHeight) {
+                    document.getElementsByTagName('meta')[
+                        'theme-color'
+                    ].content = '#2d2d2d';
+                } else {
+                    document.getElementsByTagName('meta')[
+                        'theme-color'
+                    ].content = '#04043a';
+                }
             };
         </script>
     </body>
