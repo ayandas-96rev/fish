@@ -2,17 +2,21 @@
 * {
     box-sizing: border-box;
 }
+:root {
+    --vh: 1vh;
+}
 body {
     margin: 0;
     padding: 0;
     font-family: 'Patrick Hand', cursive;
     background-color: blue;
+    background-image: url(https://png.pngtree.com/thumb_back/fw800/back_pic/04/07/65/755812093598c83.jpg);
     color: #fff;
     font-size: 18px;
-    display: flex;
 }
 .game-container {
     min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
     width: 100vw;
     background-image: url(https://png.pngtree.com/thumb_back/fw800/back_pic/04/07/65/755812093598c83.jpg);
     background-position: center;
