@@ -160,24 +160,16 @@
 
         <script>
             let dom = document.body;
+            console.log(dom.clientHeight, window.innerHeight);
             if (dom.clientHeight !== window.innerHeight) {
+                /* document.getElementsByTagName('meta')['theme-color'].content =
+                    '#2d2d2d'; */
                 document.getElementsByTagName('meta')['theme-color'].content =
-                    '#2d2d2d';
+                    '#04043a';
             } else {
                 document.getElementsByTagName('meta')['theme-color'].content =
-                    '#0a0a3e';
+                    '#04043a';
             }
-            dom.onscroll = function () {
-                if (dom.clientHeight !== window.innerHeight) {
-                    document.getElementsByTagName('meta')[
-                        'theme-color'
-                    ].content = '#2d2d2d';
-                } else {
-                    document.getElementsByTagName('meta')[
-                        'theme-color'
-                    ].content = '#04043a';
-                }
-            };
         </script>
     </body>
 </html>
