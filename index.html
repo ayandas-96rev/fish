@@ -144,16 +144,74 @@
             </div>
         </div>
         <div class="game-box">
+            <div class="complete-cards">
+                <div class="set-one">
+                    <button class="card flip">
+                        <div class="card-front-face s-1"></div>
+                        <div class="card-back-face red-back"></div>
+                    </button>
+                    <button class="card flip">
+                        <div class="card-front-face s-2"></div>
+                        <div class="card-back-face red-back"></div>
+                    </button>
+                    <button class="card flip">
+                        <div class="card-front-face s-3"></div>
+                        <div class="card-back-face red-back"></div>
+                    </button>
+                    <button class="card flip">
+                        <div class="card-front-face s-4"></div>
+                        <div class="card-back-face red-back"></div>
+                    </button>
+                    <button class="card empty"></button>
+                </div>
+                <div class="set-two"></div>
+            </div>
             <div class="card-box">
-                <div class="deck"></div>
+                <div class="deck-container">
+                    <span>deck</span>
+                    <div class="deck">
+                        <button class="card">
+                            <div class="card-front-face s-3"></div>
+                            <div class="card-back-face red-back"></div>
+                        </button>
+                        <button class="card">
+                            <div class="card-front-face s-4"></div>
+                            <div class="card-back-face red-back"></div>
+                        </button>
+                    </div>
+                </div>
                 <div class="passed"></div>
             </div>
             <div class="directions">
-                <button class="game-action"></button>
-                <div class="game-tip"></div>
+                <button class="game-action">Pass Card</button>
+                <div class="game-tip">pick or pass a card</div>
             </div>
         </div>
 
-        <script></script>
+        <script>
+            setInterval(() => {
+                toggle();
+            }, 5000);
+
+            function toggle() {
+                if (
+                    document
+                        .querySelector('.game-box')
+                        .classList['value'].includes('player')
+                ) {
+                    document
+                        .querySelector('.game-box')
+                        .classList.remove('player');
+                    document
+                        .querySelector('.game-box')
+                        .classList.add('opponent');
+                } else {
+                    document
+                        .querySelector('.game-box')
+                        .classList.remove('opponent');
+                    document.querySelector('.game-box').classList.add('player');
+                }
+            }
+        </script>
     </body>
 </html>
